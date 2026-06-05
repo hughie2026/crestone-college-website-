@@ -2,9 +2,10 @@
    The Crestone College
    File: assets/js/main.js
 
-   Rule:
-   Content must remain visible even if JavaScript fails.
-   JavaScript only enhances navigation, animation, counters, and forms.
+   Principle:
+   The page must remain readable even if JavaScript fails.
+   JavaScript only enhances navigation, reveal animation, counters,
+   smooth scrolling, and contact mailto forms.
    ========================================================= */
 
 (function () {
@@ -125,8 +126,8 @@
         });
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
+        threshold: 0.1,
+        rootMargin: "0px 0px -36px 0px"
       }
     );
 
@@ -149,7 +150,7 @@
 
     if (!Number.isFinite(target)) return;
 
-    const duration = 1100;
+    const duration = 900;
     const start = performance.now();
     const prefix = element.getAttribute("data-prefix") || "";
     const suffix = element.getAttribute("data-suffix") || "";
@@ -179,7 +180,7 @@
           }
         });
       },
-      { threshold: 0.35 }
+      { threshold: 0.3 }
     );
 
     counters.forEach(function (counter) {
@@ -207,7 +208,10 @@
 
       const headerHeight = header ? header.offsetHeight : 0;
       const targetTop =
-        target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 18;
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        headerHeight -
+        16;
 
       window.scrollTo({
         top: targetTop,
@@ -287,7 +291,7 @@
     }
   });
 
-  /* ---------- Footer year ---------- */
+  /* ---------- Footer current year ---------- */
 
   const yearTargets = document.querySelectorAll("[data-current-year]");
 
