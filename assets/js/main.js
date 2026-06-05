@@ -58,12 +58,15 @@
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") closeMenu();
+      if (event.key === "Escape") {
+        closeMenu();
+      }
     });
 
     document.addEventListener("click", function (event) {
-      const clickedInsideNav = nav.contains(event.target);
-      if (!clickedInsideNav) closeMenu();
+      if (!nav.contains(event.target)) {
+        closeMenu();
+      }
     });
   }
 
@@ -91,7 +94,7 @@
     });
   }
 
-  /* ---------- Header shrink on scroll ---------- */
+  /* ---------- Header scroll state ---------- */
 
   function setupHeaderScroll() {
     if (!header) return;
@@ -108,7 +111,7 @@
     window.addEventListener("scroll", updateHeader, { passive: true });
   }
 
-  /* ---------- Smooth anchor offset ---------- */
+  /* ---------- Smooth anchor scrolling ---------- */
 
   function setupSmoothAnchors() {
     const links = document.querySelectorAll('a[href^="#"]');
@@ -183,10 +186,12 @@
   }
 
   /* ---------- Gentle reveal enhancement ---------- */
-  /* 注意：CSS 已保證正文預設顯示，JS 只是增加細微效果，不會再把內容藏起來。 */
+  /* CSS 已保證正文預設顯示，這裡只是增強效果，不會再把內容藏起來。 */
 
   function setupRevealEnhancement() {
-    const items = document.querySelectorAll(".card, .program-card, .faculty-card, .contact-card, .info-card, .leadership-card, .timeline-item");
+    const items = document.querySelectorAll(
+      ".card, .program-card, .faculty-card, .contact-card, .info-card, .leadership-card, .timeline-item"
+    );
 
     if (!items.length) return;
 
@@ -223,6 +228,7 @@
 
     links.forEach(function (link) {
       const isSameHost = link.hostname === window.location.hostname;
+
       if (!isSameHost) {
         link.setAttribute("target", "_blank");
         link.setAttribute("rel", "noopener noreferrer");
