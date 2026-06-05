@@ -427,3 +427,51 @@ p { margin: 0 0 1em; }
   .hero { padding: 4.5rem 0 4rem; }
   .section { padding: 3.5rem 0; }
 }
+/* ---------- Contact cards ---------- */
+.contact-grid { gap: 1.4rem; }
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding: 1.6rem 1.8rem;
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-left: 3px solid var(--c-gold);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--c-text);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.contact-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--c-primary);
+  color: var(--c-text);
+}
+.contact-label {
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--c-muted);
+}
+.contact-email {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--c-primary);
+  word-break: break-all;
+}
+.contact-card:hover .contact-email { color: var(--c-gold); }
+
+.contact-line {
+  margin-top: .8rem;
+  margin-bottom: 0;
+  font-size: .92rem;
+}
+.contact-line a {
+  color: var(--c-primary);
+  font-weight: 500;
+  border-bottom: 1px dotted var(--c-gold);
+}
+.contact-line a:hover { color: var(--c-gold); }
