@@ -1,3 +1,7 @@
+/* ============================================
+   The Crestone College — Stylesheet
+   ============================================ */
+
 /* ---------- Tokens ---------- */
 :root {
   --c-primary: #1a3a5c;
@@ -79,17 +83,17 @@ p { margin: 0 0 1em; }
   justify-content: space-between;
   padding: 1rem 1.4rem;
 }
-.brand { display: flex; align-items: center; gap: .8rem; }
-.brand-logo { height: 44px; width: auto; }
-.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand { display: flex; align-items: center; gap: 1rem; }
+.brand-logo { height: 72px; width: auto; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-name {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   color: var(--c-primary);
-  font-size: 1.05rem;
+  font-size: 1.25rem;
 }
 .brand-tag {
-  font-size: .7rem;
+  font-size: .78rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--c-muted);
@@ -363,71 +367,54 @@ p { margin: 0 0 1em; }
 
 .vision-h { font-size: 1.3rem; line-height: 1.5; margin-bottom: 1rem; }
 
-/* ---------- Footer ---------- */
-.site-footer {
-  background: var(--c-primary-dark);
-  color: rgba(255,255,255,0.75);
-  padding: 4rem 0 1.5rem;
-  margin-top: auto;
+/* ---------- Hub anchor nav (academics page) ---------- */
+.hub-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--c-border);
+  position: sticky;
+  top: 104px;
+  z-index: 40;
 }
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+.hub-nav .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem 2rem;
+  padding-top: .9rem;
+  padding-bottom: .9rem;
 }
-.footer-grid h5 { color: #fff; margin-bottom: .9rem; }
-.footer-grid a { display: block; color: rgba(255,255,255,0.7); margin-bottom: .4rem; font-size: .94rem; }
-.footer-grid a:hover { color: var(--c-gold-light); }
-.footer-logo { height: 50px; width: auto; margin-bottom: .8rem; filter: brightness(0) invert(1); opacity: .9; }
-.footer-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
-  color: #fff;
-  margin-bottom: .3rem;
+.hub-nav a {
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--c-muted);
+  letter-spacing: .02em;
+  border-bottom: 2px solid transparent;
+  padding-bottom: .2rem;
+  transition: color .2s ease, border-color .2s ease;
 }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 1.5rem;
+.hub-nav a:hover {
+  color: var(--c-primary);
+  border-bottom-color: var(--c-gold);
+}
+
+/* ---------- Hub Faculty block (academics page) ---------- */
+.hub-faculty {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--c-border);
+}
+.section-alt .hub-faculty {
+  border-top-color: rgba(15,28,46,0.1);
+}
+.hub-faculty-head {
+  margin-bottom: 2rem;
   text-align: center;
-  font-size: .85rem;
-  color: rgba(255,255,255,0.55);
+}
+.hub-faculty-head h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0;
 }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .grid-2.reverse > *:first-child { order: 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .quote-block { flex-direction: column; padding: 2rem; gap: 1.5rem; text-align: center; }
-}
-
-@media (max-width: 720px) {
-  .nav-toggle { display: block; }
-  .site-nav {
-    position: absolute;
-    top: 100%;
-    left: 0; right: 0;
-    background: #fff;
-    flex-direction: column;
-    padding: 1rem 1.4rem;
-    border-bottom: 1px solid var(--c-border);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-10px);
-    opacity: 0;
-    pointer-events: none;
-    transition: .25s ease;
-  }
-  .site-nav.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .site-nav a { padding: .6rem 0; }
-  .hero { padding: 4.5rem 0 4rem; }
-  .section { padding: 3.5rem 0; }
-}
-/* ---------- Contact cards ---------- */
+/* ---------- Contact cards (contact page) ---------- */
 .contact-grid { gap: 1.4rem; }
 
 .contact-card {
@@ -475,28 +462,82 @@ p { margin: 0 0 1em; }
   border-bottom: 1px dotted var(--c-gold);
 }
 .contact-line a:hover { color: var(--c-gold); }
-/* ---------- Home hero crest ---------- */
-.hero-home { padding-top: 5rem; padding-bottom: 6rem; }
 
-.hero-crest {
-  display: block;
-  margin: 0 auto 1.6rem;
-  width: 200px;
-  height: auto;
-  filter: drop-shadow(0 6px 24px rgba(0,0,0,0.35));
-  animation: crestFadeIn .9s ease-out both;
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--c-primary-dark);
+  color: rgba(255,255,255,0.75);
+  padding: 4rem 0 1.5rem;
+  margin-top: auto;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-grid h5 { color: #fff; margin-bottom: .9rem; }
+.footer-grid a { display: block; color: rgba(255,255,255,0.7); margin-bottom: .4rem; font-size: .94rem; }
+.footer-grid a:hover { color: var(--c-gold-light); }
+.footer-logo { height: 50px; width: auto; margin-bottom: .8rem; filter: brightness(0) invert(1); opacity: .9; }
+.footer-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: .3rem;
+}
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: .85rem;
+  color: rgba(255,255,255,0.55);
 }
 
-.hero-inner.center { text-align: center; }
-.hero-inner.center .lead { margin-left: auto; margin-right: auto; }
+/* ============================================
+   Responsive
+   ============================================ */
 
-.center-cta { justify-content: center; }
-
-@keyframes crestFadeIn {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
+@media (max-width: 900px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-2.reverse > *:first-child { order: 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .quote-block { flex-direction: column; padding: 2rem; gap: 1.5rem; text-align: center; }
 }
 
 @media (max-width: 720px) {
-  .hero-crest { width: 130px; margin-bottom: 1.2rem; }
+  .nav-toggle { display: block; }
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid var(--c-border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: .25s ease;
+  }
+  .site-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .site-nav a { padding: .6rem 0; }
+
+  /* Smaller header logo on mobile */
+  .brand { gap: .7rem; }
+  .brand-logo { height: 56px; }
+  .brand-name { font-size: 1.05rem; }
+  .brand-tag { font-size: .68rem; }
+
+  .hero { padding: 4.5rem 0 4rem; }
+  .section { padding: 3.5rem 0; }
+
+  .hub-nav { top: 88px; }
+  .hub-nav .container { gap: .6rem 1.2rem; }
+  .hub-nav a { font-size: .82rem; }
 }
