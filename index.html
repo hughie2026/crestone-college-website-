@@ -1,188 +1,168 @@
-<!doctype html>
+
+---
+
+### `index.html`
+
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#1537ff">
-  <title>The Crestone College | Denver Research College</title>
-  <meta name="description" content="The Crestone College is a small research-oriented institution in Denver focused on health, responsible AI, resilience, and human futures.">
-  <link rel="canonical" href="https://tcc.edu.gl/">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Crestone College | Small Research-Intensive University in Denver</title>
+  <meta name="description" content="The Crestone College is a small research-intensive institution in Denver, Colorado, focused on Health Sciences, AI & Data, and Environmental Resilience." />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="utility-bar">
-  <div class="container utility-inner">
-    <span class="utility-note">Small by design · Research with public purpose</span>
-    <div class="utility-links">
-      <a href="mailto:admissions@tcc.edu.gl">Admissions</a>
-      <a href="mailto:research@tcc.edu.gl">Research</a>
-      <a href="mailto:partnerships@tcc.edu.gl">Partnerships</a>
-      <a href="mailto:inquiries@tcc.edu.gl">General inquiries</a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="The Crestone College crest" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-name">The Crestone College</span>
+          <span class="brand-tag">Denver · Colorado</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="research.html">Research</a>
+        <a href="leadership.html">Leadership & Faculty</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-  </div>
-</div>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="The Crestone College home">
-      <img class="brand-mark" src="assets/images/crest.png" width="92" height="92" alt="The Crestone College crest">
-      <span class="brand-copy">
-        <strong>The Crestone College</strong>
-        <span>Denver · Colorado · Est. 1989</span>
-      </span>
-    </a>
-    <nav class="main-nav" aria-label="Primary navigation">
-      <a href="index.html" class="active" aria-current="page">Home</a>
-<a href="about.html">About</a>
-<a href="academics.html">Academics</a>
-<a href="research.html">Research</a>
-<a href="faculty.html">Faculty</a>
-<a href="leadership.html">Leadership</a>
-<a href="admissions.html">Admissions</a>
-<a href="contact.html">Contact</a>
-    </nav>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-  </div>
-</header>
+  </header>
 
-<main id="main">
-
-<section class="hero">
-  <div class="hero-media">
-    <img fetchpriority="high" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Downtown_Denver_skyline.jpg?width=1800" alt="Downtown Denver skyline">
-  </div>
-  <div class="container hero-grid">
-    <div class="hero-copy reveal">
-      <p class="kicker">A research college for human futures</p>
-      <h1>Small enough to move. Serious enough to matter.</h1>
-      <p class="hero-lead">The Crestone College is a Denver-based, research-oriented institution working across health, responsible AI, data society, environmental resilience, and long-term human futures.</p>
-      <div class="hero-actions">
-        <a class="btn btn-copper" href="academics.html">Explore academic pathways</a>
-        <a class="btn btn-ghost" href="faculty.html">Meet the faculty</a>
+  <!-- Hero -->
+  <section class="hero" style="background-image: linear-gradient(rgba(15,28,46,0.65), rgba(15,28,46,0.7)), url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1800&q=80&auto=format&fit=crop');">
+    <div class="container hero-inner">
+      <p class="kicker">Founded in spirit · 1989</p>
+      <h1>A small university built for the questions that matter.</h1>
+      <p class="lead">
+        Research-intensive. Interdisciplinary by design.
+        Working at the intersection of human health, responsible AI,
+        and environmental resilience — from the heart of Denver, Colorado.
+      </p>
+      <div class="hero-cta">
+        <a href="academics.html" class="btn btn-primary">Explore Programs</a>
+        <a href="about.html" class="btn btn-ghost">Our Story</a>
       </div>
     </div>
-    <div class="hero-seal reveal">
-      <img src="assets/images/crest.png" alt="The Crestone College crest">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section section-white">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-no">01</div>
+  <!-- Mission strip -->
+  <section class="section">
+    <div class="container narrow center">
+      <p class="kicker gold">Our Mission</p>
+      <h2>Knowledge that serves human futures.</h2>
+      <p class="muted">
+        Through interdisciplinary research, research-driven education,
+        and public practice, The Crestone College advances human health,
+        responsible technology, environmental resilience, and social wellbeing.
+      </p>
+    </div>
+  </section>
+
+  <!-- Three Hubs -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker gold">Three Academic Hubs</p>
+        <h2>One college, three intersecting questions.</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80&auto=format&fit=crop');"></div>
+          <div class="card-body">
+            <h3>Health Sciences & Human Performance</h3>
+            <p>How can people live healthier, more resilient, higher-quality lives in a rapidly changing world?</p>
+            <a href="academics.html#hub-health" class="link-arrow">Explore Hub I →</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&q=80&auto=format&fit=crop');"></div>
+          <div class="card-body">
+            <h3>AI, Data & Society</h3>
+            <p>How can AI and data systems serve society in ways that are responsible, trustworthy, and human-centered?</p>
+            <a href="academics.html#hub-ai" class="link-arrow">Explore Hub II →</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=900&q=80&auto=format&fit=crop');"></div>
+          <div class="card-body">
+            <h3>Environment, Resilience & Human Futures</h3>
+            <p>How do communities build long-term resilience amid climate, environmental, and social change?</p>
+            <a href="academics.html#hub-environment" class="link-arrow">Explore Hub III →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- President quote -->
+  <section class="section">
+    <div class="container quote-block">
+      <img src="images/president.jpg" alt="Dr. Adrian Keller, Founding President" class="quote-portrait" />
+      <blockquote>
+        <p>“The future of medical AI is not only about faster diagnosis. It is about understanding the relationships between human health, behavior, environment, and long-term wellbeing.”</p>
+        <cite>— Dr. Adrian Keller, Ph.D. · Founding President</cite>
+        <a href="leadership.html#president" class="link-arrow">Meet our leadership →</a>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Values strip -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head light">
+        <p class="kicker gold">Core Values</p>
+        <h2>Small by design. Public in purpose.</h2>
+      </div>
+      <div class="grid grid-3 values">
+        <div><h4>Small by Design</h4><p>Scale is not a constraint — it’s a method for focus, agility, and genuine community.</p></div>
+        <div><h4>Research with Public Purpose</h4><p>Knowledge belongs in health systems, classrooms, communities, and policy — not just in journals.</p></div>
+        <div><h4>Interdisciplinary by Default</h4><p>Real problems don’t stop at disciplinary borders, so neither does our work.</p></div>
+        <div><h4>Human-Centered Innovation</h4><p>Technology should serve dignity, health, freedom, and shared life.</p></div>
+        <div><h4>Ethical Inquiry</h4><p>Research integrity, data responsibility, and social impact are non-negotiable.</p></div>
+        <div><h4>Open Community</h4><p>Researchers, students, partners, and the public form one inquiring community.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
       <div>
-        <h2 class="section-title">A college organized around questions, not departments.</h2>
-        <p class="section-intro">Three Academic Hubs form a compact research community. Each hub combines teaching, inquiry, public projects, and external collaboration without reproducing the administrative weight of a large university.</p>
+        <img src="images/logo.png" alt="" class="footer-logo" />
+        <p class="footer-name">The Crestone College</p>
+        <p class="muted small">Grant Street, Denver, Colorado, USA</p>
       </div>
-    </div>
-    <div class="fact-band reveal">
-      <div class="fact"><strong>3</strong><span>Interdisciplinary Academic Hubs</span></div>
-      <div class="fact"><strong>4</strong><span>Focused Diploma Pathways</span></div>
-      <div class="fact"><strong>15</strong><span>Core & Research Faculty Profiles</span></div>
-      <div class="fact"><strong>1989</strong><span>Crestone Lab Intellectual Origin</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-no">02</div>
       <div>
-        <h2 class="section-title">Three hubs. One shared field of inquiry.</h2>
-        <p class="section-intro">Research moves laterally across health, technology, environment, ethics, and public life.</p>
+        <h5>Explore</h5>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="research.html">Research</a>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <a href="leadership.html">Leadership & Faculty</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
-    <div class="hub-index reveal">
-      <article class="hub-panel">
-        <img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/TEM_of_coronavirus_OC43.jpg?width=900" alt="Health sciences research image">
-        <div class="hub-copy"><small>Hub I</small><h3>Health Sciences & Human Performance</h3><a href="research.html#health">Enter the hub</a></div>
-      </article>
-      <article class="hub-panel">
-        <img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Pleiades_supercomputer.jpg?width=900" alt="Supercomputer research facility">
-        <div class="hub-copy"><small>Hub II</small><h3>AI, Data & Society</h3><a href="research.html#ai">Enter the hub</a></div>
-      </article>
-      <article class="hub-panel">
-        <img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Solar_Panel_Array.jpg?width=900" alt="Solar array">
-        <div class="hub-copy"><small>Hub III</small><h3>Environment, Resilience & Human Futures</h3><a href="research.html#futures">Enter the hub</a></div>
-      </article>
+    <div class="container footer-bottom">
+      <p>© 1989 The Crestone College. All rights reserved.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section class="section section-dark">
-  <div class="container editorial-grid">
-    <blockquote class="pullquote reveal">“Small by design” is not a claim about limitation. It is a commitment to focus, intellectual density, and direct collaboration.</blockquote>
-    <div class="reveal">
-      <p class="kicker">The Crestone method</p>
-      <div class="ledger">
-        <div class="ledger-row"><strong>Research</strong><span>Interdisciplinary, applied, ethically governed.</span></div>
-        <div class="ledger-row"><strong>Education</strong><span>Studio-based, inquiry-led, portfolio assessed.</span></div>
-        <div class="ledger-row"><strong>Partnerships</strong><span>Built around public value and real-world use.</span></div>
-        <div class="ledger-row"><strong>Scale</strong><span>Lean administration, high-contact academic life.</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-white">
-  <div class="container president-layout">
-    <div class="president-photo reveal">
-      <img src="assets/images/president.png" alt="Portrait of founding president Dr. Adrian Keller">
-    </div>
-    <div class="president-copy reveal">
-      <p class="kicker">Founding president</p>
-      <h2>Dr. Adrian Keller, Ph.D.</h2>
-      <p class="lead">Medical AI and human systems researcher; architect of the College's compact interdisciplinary model.</p>
-      <p>Dr. Keller's leadership joins scientific rigor, responsible technology, and public-purpose research. His work focuses on medical imaging intelligence, clinical data science, predictive health, human performance, and the ethical governance of AI in health systems.</p>
-      <a class="btn btn-dark" href="leadership.html">Leadership profile</a>
-    </div>
-  </div>
-</section>
-
-<section class="section section-sage">
-  <div class="container cta-strip">
-    <h2>Bring a question worth pursuing.</h2>
-    <a class="btn btn-ghost" href="mailto:admissions@tcc.edu.gl">Contact Admissions</a>
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <div class="footer-brand">
-        <img class="footer-crest" src="assets/images/crest.png" width="145" height="145" loading="lazy" alt="The Crestone College crest">
-        <div>
-          <div class="footer-title">The Crestone College</div>
-          <p>Grant Street area<br>Denver, Colorado, United States</p>
-        </div>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h3>Academic offices</h3>
-      <a href="mailto:admissions@tcc.edu.gl">admissions@tcc.edu.gl</a>
-      <a href="mailto:research@tcc.edu.gl">research@tcc.edu.gl</a>
-      <a href="mailto:partnerships@tcc.edu.gl">partnerships@tcc.edu.gl</a>
-      <a href="mailto:inquiries@tcc.edu.gl">inquiries@tcc.edu.gl</a>
-    </div>
-    <div class="footer-col">
-      <h3>Navigate</h3>
-      <a href="academics.html">Diploma pathways</a>
-      <a href="research.html">Research hubs</a>
-      <a href="faculty.html">Faculty directory</a>
-      <a href="leadership.html">Leadership & governance</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© <span data-year>1989</span> The Crestone College. All rights reserved.</span>
-    <span>Official domain: tcc.edu.gl</span>
-  </div>
-</footer>
-<script src="assets/js/main.js"></script>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
