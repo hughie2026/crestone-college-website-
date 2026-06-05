@@ -475,3 +475,28 @@ p { margin: 0 0 1em; }
   border-bottom: 1px dotted var(--c-gold);
 }
 .contact-line a:hover { color: var(--c-gold); }
+/* ---------- Home hero crest ---------- */
+.hero-home { padding-top: 5rem; padding-bottom: 6rem; }
+
+.hero-crest {
+  display: block;
+  margin: 0 auto 1.6rem;
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,0.35));
+  animation: crestFadeIn .9s ease-out both;
+}
+
+.hero-inner.center { text-align: center; }
+.hero-inner.center .lead { margin-left: auto; margin-right: auto; }
+
+.center-cta { justify-content: center; }
+
+@keyframes crestFadeIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 720px) {
+  .hero-crest { width: 130px; margin-bottom: 1.2rem; }
+}
