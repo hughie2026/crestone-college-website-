@@ -1,27 +1,16 @@
-# The Crestone College Website
+# The Crestone College — Official Website
 
-Official static website for The Crestone College.
+Static website for **The Crestone College**, a small research-intensive
+institution in Denver, Colorado, focused on Health Sciences, AI & Data,
+and Environmental Resilience.
 
-Domain:
+## Stack
+- Plain HTML5 + CSS3 + vanilla JavaScript
+- No build step required
+- Deployable via GitHub Pages
 
-https://tcc.edu.gl
+## Local Preview
+Open `index.html` directly in a browser, or run a local server:
 
-## Folder Structure
-
-```text
-crestone-college-website/
-├── index.html
-├── about.html
-├── academics.html
-├── research.html
-├── leadership.html
-├── admissions.html
-├── assets/
-│   ├── css/
-│   │   └── styles.css
-│   ├── js/
-│   │   └── main.js
-│   └── images/
-│       ├── crest.png
-│       └── president.png
-└── README.md
+```bash
+python3 -m http.server 8000
