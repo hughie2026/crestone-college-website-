@@ -1,123 +1,204 @@
 /* =========================================================
    The Crestone College
+   Main JavaScript
    File: assets/js/main.js
-
-   Principle:
-   The page must remain readable even if JavaScript fails.
-   JavaScript only enhances navigation, reveal animation, counters,
-   smooth scrolling, and contact mailto forms.
    ========================================================= */
 
 (function () {
   "use strict";
 
-  const root = document.documentElement;
   const body = document.body;
   const header = document.querySelector(".site-header");
-  const navToggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav, .navbar");
   const navLinks = document.querySelector(".nav-links");
 
-  root.classList.add("js");
+  body.classList.add("js-ready");
 
   /* ---------- Mobile navigation ---------- */
 
-  function closeNav() {
-    body.classList.remove("nav-open");
+  function setupMobileNavigation() {
+    if (!nav || !navLinks) return;
 
-    if (navToggle) {
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.setAttribute("aria-label", "Open navigation menu");
+    let toggle = document.querySelector(".nav-toggle");
+
+    if (!toggle) {
+      toggle = document.createElement("button");
+      toggle.className = "nav-toggle";
+      toggle.type = "button";
+      toggle.setAttribute("aria-label", "Open navigation");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.innerHTML = "<span></span><span></span><span></span>";
+      nav.appendChild(toggle);
     }
-  }
 
-  function openNav() {
-    body.classList.add("nav-open");
-
-    if (navToggle) {
-      navToggle.setAttribute("aria-expanded", "true");
-      navToggle.setAttribute("aria-label", "Close navigation menu");
+    function closeMenu() {
+      body.classList.remove("nav-open");
+      navLinks.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
     }
-  }
 
-  if (navToggle && navLinks) {
-    navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Open navigation menu");
+    function openMenu() {
+      body.classList.add("nav-open");
+      navLinks.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close navigation");
+    }
 
-    navToggle.addEventListener("click", function () {
+    toggle.addEventListener("click", function () {
       if (body.classList.contains("nav-open")) {
-        closeNav();
+        closeMenu();
       } else {
-        openNav();
+        openMenu();
       }
     });
 
-    navLinks.addEventListener("click", function (event) {
-      const target = event.target;
-
-      if (target && target.tagName === "A") {
-        closeNav();
-      }
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
-        closeNav();
-      }
+      if (event.key === "Escape") closeMenu();
     });
 
     document.addEventListener("click", function (event) {
-      const clickedInsideHeader = header && header.contains(event.target);
+      const clickedInsideNav = nav.contains(event.target);
+      if (!clickedInsideNav) closeMenu();
+    });
+  }
 
-      if (!clickedInsideHeader) {
-        closeNav();
+  /* ---------- Active page link ---------- */
+
+  function setupActiveNavigation() {
+    const links = document.querySelectorAll(".nav-links a");
+    if (!links.length) return;
+
+    const currentPath = window.location.pathname.split("/").pop() || "index.html";
+
+    links.forEach(function (link) {
+      const href = link.getAttribute("href");
+      if (!href) return;
+
+      const linkPath = href.split("/").pop();
+
+      if (
+        linkPath === currentPath ||
+        (currentPath === "" && linkPath === "index.html")
+      ) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
       }
     });
   }
 
-  /* ---------- Current page highlight ---------- */
+  /* ---------- Header shrink on scroll ---------- */
 
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navItems = document.querySelectorAll(".nav-links a, .footer-links a");
+  function setupHeaderScroll() {
+    if (!header) return;
 
-  navItems.forEach(function (link) {
-    const href = link.getAttribute("href");
+    function updateHeader() {
+      if (window.scrollY > 24) {
+        header.classList.add("is-scrolled");
+      } else {
+        header.classList.remove("is-scrolled");
+      }
+    }
 
-    if (!href || href.startsWith("#") || href.startsWith("mailto:")) {
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+  }
+
+  /* ---------- Smooth anchor offset ---------- */
+
+  function setupSmoothAnchors() {
+    const links = document.querySelectorAll('a[href^="#"]');
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const targetId = link.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        event.preventDefault();
+
+        const headerHeight = header ? header.offsetHeight : 0;
+        const top =
+          target.getBoundingClientRect().top +
+          window.scrollY -
+          headerHeight -
+          16;
+
+        window.scrollTo({
+          top: top,
+          behavior: "smooth",
+        });
+      });
+    });
+  }
+
+  /* ---------- Back to top button ---------- */
+
+  function setupBackToTop() {
+    let button = document.querySelector(".back-to-top");
+
+    if (!button) {
+      button = document.createElement("button");
+      button.className = "back-to-top";
+      button.type = "button";
+      button.setAttribute("aria-label", "Back to top");
+      button.textContent = "↑";
+      document.body.appendChild(button);
+    }
+
+    function updateButton() {
+      if (window.scrollY > 520) {
+        button.classList.add("is-visible");
+      } else {
+        button.classList.remove("is-visible");
+      }
+    }
+
+    button.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+
+    updateButton();
+    window.addEventListener("scroll", updateButton, { passive: true });
+  }
+
+  /* ---------- Current year ---------- */
+
+  function setupCurrentYear() {
+    const year = new Date().getFullYear();
+    const targets = document.querySelectorAll("#year, .year, .js-year");
+
+    targets.forEach(function (target) {
+      target.textContent = year;
+    });
+  }
+
+  /* ---------- Gentle reveal enhancement ---------- */
+  /* 注意：CSS 已保證正文預設顯示，JS 只是增加細微效果，不會再把內容藏起來。 */
+
+  function setupRevealEnhancement() {
+    const items = document.querySelectorAll(".card, .program-card, .faculty-card, .contact-card, .info-card, .leadership-card, .timeline-item");
+
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      items.forEach(function (item) {
+        item.classList.add("is-visible");
+      });
       return;
     }
 
-    const linkPage = href.split("/").pop() || "index.html";
-
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    }
-  });
-
-  /* ---------- Header scroll state ---------- */
-
-  function updateHeaderState() {
-    if (!header) return;
-
-    if (window.scrollY > 8) {
-      header.classList.add("is-scrolled");
-    } else {
-      header.classList.remove("is-scrolled");
-    }
-  }
-
-  updateHeaderState();
-  window.addEventListener("scroll", updateHeaderState, { passive: true });
-
-  /* ---------- Safe reveal animation ---------- */
-
-  const revealItems = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window && revealItems.length > 0) {
-    root.classList.add("can-reveal");
-
-    const revealObserver = new IntersectionObserver(
-      function (entries, observer) {
+    const observer = new IntersectionObserver(
+      function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
@@ -126,176 +207,45 @@
         });
       },
       {
-        threshold: 0.1,
-        rootMargin: "0px 0px -36px 0px"
+        threshold: 0.12,
       }
     );
 
-    revealItems.forEach(function (item) {
-      revealObserver.observe(item);
-    });
-  } else {
-    revealItems.forEach(function (item) {
-      item.classList.add("is-visible");
+    items.forEach(function (item) {
+      observer.observe(item);
     });
   }
-
-  /* ---------- Count-up numbers ---------- */
-
-  const counters = document.querySelectorAll("[data-count]");
-
-  function animateCounter(element) {
-    const rawTarget = element.getAttribute("data-count");
-    const target = Number(rawTarget);
-
-    if (!Number.isFinite(target)) return;
-
-    const duration = 900;
-    const start = performance.now();
-    const prefix = element.getAttribute("data-prefix") || "";
-    const suffix = element.getAttribute("data-suffix") || "";
-
-    function tick(now) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      const value = Math.round(target * eased);
-
-      element.textContent = prefix + value.toLocaleString() + suffix;
-
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
-    }
-
-    requestAnimationFrame(tick);
-  }
-
-  if ("IntersectionObserver" in window && counters.length > 0) {
-    const counterObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    counters.forEach(function (counter) {
-      counterObserver.observe(counter);
-    });
-  } else {
-    counters.forEach(animateCounter);
-  }
-
-  /* ---------- Smooth anchor scrolling ---------- */
-
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-
-  anchorLinks.forEach(function (link) {
-    link.addEventListener("click", function (event) {
-      const id = link.getAttribute("href");
-
-      if (!id || id === "#") return;
-
-      const target = document.querySelector(id);
-
-      if (!target) return;
-
-      event.preventDefault();
-
-      const headerHeight = header ? header.offsetHeight : 0;
-      const targetTop =
-        target.getBoundingClientRect().top +
-        window.pageYOffset -
-        headerHeight -
-        16;
-
-      window.scrollTo({
-        top: targetTop,
-        behavior: "smooth"
-      });
-    });
-  });
-
-  /* ---------- Contact form mailto helper ---------- */
-
-  const forms = document.querySelectorAll("form[data-mailto]");
-
-  forms.forEach(function (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      const recipient = form.getAttribute("data-mailto");
-
-      if (!recipient) return;
-
-      const subjectInput = form.querySelector("[name='subject']");
-      const nameInput = form.querySelector("[name='name']");
-      const emailInput = form.querySelector("[name='email']");
-      const messageInput = form.querySelector("[name='message']");
-
-      const subject =
-        subjectInput && subjectInput.value.trim()
-          ? subjectInput.value.trim()
-          : "Website inquiry";
-
-      const name =
-        nameInput && nameInput.value.trim()
-          ? nameInput.value.trim()
-          : "";
-
-      const email =
-        emailInput && emailInput.value.trim()
-          ? emailInput.value.trim()
-          : "";
-
-      const message =
-        messageInput && messageInput.value.trim()
-          ? messageInput.value.trim()
-          : "";
-
-      const bodyText = [
-        name ? "Name: " + name : "",
-        email ? "Email: " + email : "",
-        "",
-        message
-      ]
-        .filter(function (line) {
-          return line !== null && line !== undefined;
-        })
-        .join("\n");
-
-      const mailtoUrl =
-        "mailto:" +
-        encodeURIComponent(recipient) +
-        "?subject=" +
-        encodeURIComponent(subject) +
-        "&body=" +
-        encodeURIComponent(bodyText);
-
-      window.location.href = mailtoUrl;
-    });
-  });
 
   /* ---------- External links ---------- */
 
-  const externalLinks = document.querySelectorAll("a[href^='http']");
+  function setupExternalLinks() {
+    const links = document.querySelectorAll('a[href^="http"]');
 
-  externalLinks.forEach(function (link) {
-    if (link.hostname !== window.location.hostname) {
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-    }
-  });
+    links.forEach(function (link) {
+      const isSameHost = link.hostname === window.location.hostname;
+      if (!isSameHost) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+  }
 
-  /* ---------- Footer current year ---------- */
+  /* ---------- Init ---------- */
 
-  const yearTargets = document.querySelectorAll("[data-current-year]");
+  function init() {
+    setupMobileNavigation();
+    setupActiveNavigation();
+    setupHeaderScroll();
+    setupSmoothAnchors();
+    setupBackToTop();
+    setupCurrentYear();
+    setupRevealEnhancement();
+    setupExternalLinks();
+  }
 
-  yearTargets.forEach(function (target) {
-    target.textContent = new Date().getFullYear();
-  });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
 })();
