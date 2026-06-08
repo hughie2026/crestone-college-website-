@@ -10,6 +10,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* President quote portrait — 3:4 portrait override */
+    .quote-block .quote-portrait {
+      width: 180px;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      border-radius: 14px;          /* 圓角矩形，不是正圓 */
+      object-fit: cover;
+      object-position: center top;  /* 臉部偏上呈現 */
+      box-shadow: 0 10px 28px rgba(15, 28, 46, 0.18);
+      border: 1px solid rgba(15, 28, 46, 0.06);
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .quote-block .quote-portrait { width: 150px; }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
