@@ -1,115 +1,330 @@
-  <!-- Faculty (Representative) -->
-  <section class="section section-alt" id="faculty">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership & Faculty | The Crestone College</title>
+  <meta name="description" content="Board of Trustees, Executive Leadership, and Faculty across our three Academic Hubs." />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Person card photo styling (page-local) — 3:4 portrait */
+    .person.has-photo { text-align: center; }
+    .person-photo {
+      width: 180px;             /* 180px wide, height auto = 240px (3:4) */
+      aspect-ratio: 3 / 4;
+      border-radius: 12px;      /* rounded rectangle, not a circle */
+      overflow: hidden;
+      margin: 0 auto 1.1rem;
+      background: #eef1f5;
+      box-shadow: 0 8px 24px rgba(15, 28, 46, 0.14);
+      border: 1px solid rgba(15, 28, 46, 0.06);
+    }
+    .person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;        /* source is 3:4, no distortion */
+      object-position: center top;
+      display: block;
+    }
+    /* Dark Faculty section: softer border and shadow */
+    .people.dark .person-photo {
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+    /* Subtle emphasis for the highlighted (President) card */
+    .person.highlight .person-photo {
+      border: 2px solid #c9a24a;
+      box-shadow: 0 10px 26px rgba(201, 162, 74, 0.25);
+    }
+    /* Smaller photo on phones */
+    @media (max-width: 640px) {
+      .person-photo { width: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <img src="images/logo.png" alt="The Crestone College crest" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-name">The Crestone College</span>
+          <span class="brand-tag">Denver · Colorado</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="research.html">Research</a>
+        <a href="leadership.html" class="active">Leadership & Faculty</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="background-image: linear-gradient(rgba(15,28,46,0.72), rgba(15,28,46,0.72)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1800&q=80&auto=format&fit=crop');">
+    <div class="container">
+      <p class="kicker">People</p>
+      <h1>Leadership & Faculty</h1>
+      <p class="lead">A small, focused community of researchers, scholars, and practitioners.</p>
+    </div>
+  </section>
+
+  <!-- Founding President -->
+  <section class="section" id="president">
+    <div class="container">
+      <div class="grid grid-2 align-center president-block">
+        <div class="img-frame portrait">
+          <img src="images/president.png" alt="Dr. Adrian Keller, Founding President of The Crestone College" />
+        </div>
+        <div>
+          <p class="kicker gold">Founding President</p>
+          <h2>Dr. Adrian Keller, Ph.D.</h2>
+          <p class="role">Medical AI & Human Systems Researcher</p>
+          <p>
+            Dr. Adrian Keller is the Founding President of The Crestone College and a
+            research-driven leader working at the intersection of medical AI and human
+            health systems. His research focuses on medical image analysis, predictive
+            health risk modeling, personalized intervention, AI clinical decision support,
+            and the ethical governance of medical AI.
+          </p>
+          <p>
+            Before founding The Crestone College, Dr. Keller served as principal
+            investigator, strategic advisor, and program lead across multiple medical
+            technology, health data, and interdisciplinary research projects. He is
+            especially interested in how small, high-density research institutions can
+            connect medicine, AI, and social impact through lean organizations,
+            cross-domain labs, and rapid translation.
+          </p>
+          <p>
+            As Founding President, Dr. Keller leads the college's research architecture,
+            academic direction, and international partnerships, anchored in three Academic
+            Hubs: Health Sciences & Human Performance; AI, Data & Society; and
+            Environment, Resilience & Human Futures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Board of Trustees -->
+  <section class="section section-alt" id="board">
     <div class="container">
       <div class="section-head">
+        <p class="kicker gold">Governance</p>
+        <h2>Board of Trustees</h2>
+      </div>
+      <div class="grid grid-3 people">
+        <div class="person"><h4>Dr. Eleanor Whitcomb</h4><p class="role">Chair of the Board of Trustees</p><p class="muted small">Higher education strategy · institutional governance · research philanthropy</p></div>
+        <div class="person"><h4>Marcus A. Hale</h4><p class="role">Vice Chair of the Board</p><p class="muted small">Social enterprise · nonprofit leadership · public–private partnerships</p></div>
+        <div class="person"><h4>Dr. Priya Narayanan</h4><p class="role">Trustee for Academic and Research Affairs</p><p class="muted small">Interdisciplinary research · global health · graduate education</p></div>
+        <div class="person"><h4>Sofia Martinez</h4><p class="role">Trustee for Community and External Partnerships</p><p class="muted small">Community development · civic engagement · regional collaboration</p></div>
+        <div class="person"><h4>Thomas R. Ellery</h4><p class="role">Treasurer of the Board</p><p class="muted small">Finance · audit oversight · institutional risk management</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Leadership -->
+  <section class="section" id="executive">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker gold">Executive Leadership</p>
+        <h2>The team running the college day to day.</h2>
+      </div>
+      <div class="grid grid-3 people">
+        <div class="person highlight has-photo">
+          <div class="person-photo"><img src="images/president.png" alt="Dr. Adrian Keller" /></div>
+          <h4>Dr. Adrian Keller, Ph.D.</h4>
+          <p class="role">President</p>
+          <p class="muted small">Strategy, research architecture, academic direction, external and international partnerships.</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/maya-bell.jpg" alt="Dr. Maya S. Bell" /></div>
+          <h4>Dr. Maya S. Bell</h4>
+          <p class="role">Provost & Research Lead</p>
+          <p class="muted small">Coordinates the three Academic Hubs, academic standards, faculty appointments, and research quality.</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/daniel-kim.jpg" alt="Daniel R. Kim" /></div>
+          <h4>Daniel R. Kim</h4>
+          <p class="role">Operations & Compliance Lead</p>
+          <p class="muted small">Finance, HR, contracts, operations, policy, risk, and compliance.</p>
+        </div>
+      </div>
+
+      <h3 class="subhead">Office of Academic & Administrative Services</h3>
+      <div class="grid grid-2 people">
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/claire-bennett.jpg" alt="Claire H. Bennett" /></div>
+          <h4>Claire H. Bennett</h4>
+          <p class="role">Director of Academic & Administrative Services</p>
+          <p class="muted small">Coordinates student services, academic administration, admissions operations, and internal workflows.</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/naomi-park.jpg" alt="Naomi Q. Park" /></div>
+          <h4>Naomi Q. Park</h4>
+          <p class="role">Registrar & Student Records Coordinator</p>
+          <p class="muted small">Student records, registration, transcripts, academic calendar, and diploma documents.</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/lucas-reed.jpg" alt="Lucas M. Reed" /></div>
+          <h4>Lucas M. Reed</h4>
+          <p class="role">Research Administration & Partnerships Coordinator</p>
+          <p class="muted small">Project tracking, grant support, partnership coordination, and visiting scholar administration.</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/elena-voss.jpg" alt="Elena Voss" /></div>
+          <h4>Elena Voss</h4>
+          <p class="role">Finance & HR Administrator</p>
+          <p class="muted small">Finance processing, vendor coordination, HR records, faculty contracts, payroll coordination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty (Representative) -->
+  <section class="section section-dark" id="faculty">
+    <div class="container">
+      <div class="section-head light">
         <p class="kicker gold">Faculty (Representative)</p>
         <h2>Hub-based research and teaching faculty.</h2>
-        <p class="muted">A small core faculty works alongside research professors and external collaborators across each Hub.</p>
+        <p class="muted-light">A small core faculty works alongside research professors and external collaborators across each Hub.</p>
       </div>
 
       <!-- Hub I Faculty -->
       <h3 class="hub-title">Hub I · Health Sciences & Human Performance</h3>
-      <div class="grid grid-3 people">
+      <div class="grid grid-3 people dark">
         <div class="person has-photo">
           <div class="person-photo"><img src="images/helena-morris.jpg" alt="Dr. Helena Morris" /></div>
           <h4>Dr. Helena Morris</h4>
           <p class="role">Hub Director · Professor of Health Sciences and Human Performance</p>
-          <p class="muted small">Human performance · preventive health · lifestyle medicine · wellbeing science</p>
+          <p class="muted-light small">Human performance · preventive health · lifestyle medicine · wellbeing science</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/rafael-ibarra.jpg" alt="Dr. Rafael Ibarra" /></div>
           <h4>Dr. Rafael Ibarra</h4>
           <p class="role">Associate Professor of Public Health and Community Health</p>
-          <p class="muted small">Public health systems · community wellbeing · health equity · prevention programs</p>
+          <p class="muted-light small">Public health systems · community wellbeing · health equity · prevention programs</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/lian-chen.jpg" alt="Dr. Lian Chen" /></div>
           <h4>Dr. Lian Chen</h4>
           <p class="role">Associate Professor of Digital Health and Health Data</p>
-          <p class="muted small">Digital health tools · health data analytics · remote monitoring · AI-assisted health systems</p>
+          <p class="muted-light small">Digital health tools · health data analytics · remote monitoring · AI-assisted health systems</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/miriam-osei.jpg" alt="Dr. Miriam Osei" /></div>
           <h4>Dr. Miriam Osei</h4>
           <p class="role">Research Professor of Mental Health and Wellbeing</p>
-          <p class="muted small">Mental health · stress resilience · behavioral health · trauma-informed wellbeing</p>
+          <p class="muted-light small">Mental health · stress resilience · behavioral health · trauma-informed wellbeing</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/caleb-winters.jpg" alt="Dr. Caleb Winters" /></div>
           <h4>Dr. Caleb Winters</h4>
           <p class="role">Assistant Professor of Human Performance Studies</p>
-          <p class="muted small">Physical performance · exercise science · recovery · occupational health</p>
+          <p class="muted-light small">Physical performance · exercise science · recovery · occupational health</p>
         </div>
       </div>
 
       <!-- Hub II Faculty -->
       <h3 class="hub-title">Hub II · AI, Data & Society</h3>
-      <div class="grid grid-3 people">
+      <div class="grid grid-3 people dark">
         <div class="person has-photo">
           <div class="person-photo"><img src="images/nathaniel-brooks.jpg" alt="Dr. Nathaniel Brooks" /></div>
           <h4>Dr. Nathaniel Brooks</h4>
           <p class="role">Hub Director · Professor of AI and Social Systems</p>
-          <p class="muted small">Responsible AI · sociotechnical systems · digital governance · AI in public institutions</p>
+          <p class="muted-light small">Responsible AI · sociotechnical systems · digital governance · AI in public institutions</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/aisha-rahman.jpg" alt="Dr. Aisha Rahman" /></div>
           <h4>Dr. Aisha Rahman</h4>
           <p class="role">Associate Professor of Data Science and Responsible AI</p>
-          <p class="muted small">Data science · AI accountability · algorithmic fairness · model evaluation</p>
+          <p class="muted-light small">Data science · AI accountability · algorithmic fairness · model evaluation</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/julian-park.jpg" alt="Dr. Julian Park" /></div>
           <h4>Dr. Julian Park</h4>
           <p class="role">Associate Professor of Human-AI Interaction</p>
-          <p class="muted small">Human-centered AI · interface design · decision support · AI in professional workflows</p>
+          <p class="muted-light small">Human-centered AI · interface design · decision support · AI in professional workflows</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/vera-sokolov.jpg" alt="Dr. Vera Sokolov" /></div>
           <h4>Dr. Vera Sokolov</h4>
           <p class="role">Research Professor of Computational Social Science</p>
-          <p class="muted small">Social data · computational modeling · public behavior · digital society</p>
+          <p class="muted-light small">Social data · computational modeling · public behavior · digital society</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/owen-fielding.jpg" alt="Dr. Owen Fielding" /></div>
           <h4>Dr. Owen Fielding</h4>
           <p class="role">Assistant Professor of Applied AI Systems</p>
-          <p class="muted small">Applied machine learning · AI prototypes · health AI · education technology</p>
+          <p class="muted-light small">Applied machine learning · AI prototypes · health AI · education technology</p>
         </div>
       </div>
 
       <!-- Hub III Faculty -->
       <h3 class="hub-title">Hub III · Environment, Resilience & Human Futures</h3>
-      <div class="grid grid-3 people">
+      <div class="grid grid-3 people dark">
         <div class="person has-photo">
           <div class="person-photo"><img src="images/clara-montoya.jpg" alt="Dr. Clara Montoya" /></div>
           <h4>Dr. Clara Montoya</h4>
           <p class="role">Hub Director · Professor of Environmental Resilience and Human Futures</p>
-          <p class="muted small">Climate resilience · environmental systems · sustainable communities · futures studies</p>
+          <p class="muted-light small">Climate resilience · environmental systems · sustainable communities · futures studies</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/samuel-finch.jpg" alt="Dr. Samuel R. Finch" /></div>
           <h4>Dr. Samuel R. Finch</h4>
           <p class="role">Associate Professor of Climate Resilience</p>
-          <p class="muted small">Climate adaptation · environmental risk · resilience planning · regional climate systems</p>
+          <p class="muted-light small">Climate adaptation · environmental risk · resilience planning · regional climate systems</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/ingrid-hale.jpg" alt="Dr. Ingrid Hale" /></div>
           <h4>Dr. Ingrid Hale</h4>
           <p class="role">Research Professor of Urban Sustainability</p>
-          <p class="muted small">Sustainable cities · urban transformation · civic infrastructure · built environment</p>
+          <p class="muted-light small">Sustainable cities · urban transformation · civic infrastructure · built environment</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/mateo-alvarez.jpg" alt="Dr. Mateo Alvarez" /></div>
           <h4>Dr. Mateo Alvarez</h4>
           <p class="role">Assistant Professor of Water, Land, and Community Systems</p>
-          <p class="muted small">Water systems · land use · community adaptation · environmental research in the American West</p>
+          <p class="muted-light small">Water systems · land use · community adaptation · environmental research in the American West</p>
         </div>
         <div class="person has-photo">
           <div class="person-photo"><img src="images/leona-price.jpg" alt="Dr. Leona Price" /></div>
           <h4>Dr. Leona Price</h4>
           <p class="role">Associate Professor of Human Futures and Scenario Planning</p>
-          <p class="muted small">Futures research · scenario planning · long-term social change · institutional resilience</p>
+          <p class="muted-light small">Futures research · scenario planning · long-term social change · institutional resilience</p>
         </div>
       </div>
     </div>
   </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="images/logo.png" alt="" class="footer-logo" />
+        <p class="footer-name">The Crestone College</p>
+        <p class="muted small">Grant Street, Denver, Colorado, USA</p>
+        <p class="muted small">tcc.edu.gl</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="research.html">Research</a>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <a href="leadership.html">Leadership & Faculty</a>
+        <a href="contact.html">Contact</a>
+        <a href="mailto:info@tcc.edu.gl">info@tcc.edu.gl</a>
+      </div>
+    </div>
+    <div class="container footer-bottom"><p>© 1989 The Crestone College. All rights reserved.</p></div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
