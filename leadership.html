@@ -12,9 +12,9 @@
     /* Person card photo styling (page-local) — 3:4 portrait */
     .person.has-photo { text-align: center; }
     .person-photo {
-      width: 180px;             /* 寬度 180px，高度自動為 240px (3:4) */
+      width: 180px;             /* 180px wide, height auto = 240px (3:4) */
       aspect-ratio: 3 / 4;
-      border-radius: 12px;      /* 圓角矩形，不是正圓 */
+      border-radius: 12px;      /* rounded rectangle, not a circle */
       overflow: hidden;
       margin: 0 auto 1.1rem;
       background: #eef1f5;
@@ -24,21 +24,21 @@
     .person-photo img {
       width: 100%;
       height: 100%;
-      object-fit: cover;        /* 照片本身就是 3:4，不會被裁切變形 */
+      object-fit: cover;        /* source is 3:4, no distortion */
       object-position: center top;
       display: block;
     }
-    /* 深色 Faculty 區塊：邊框與陰影調柔 */
+    /* Dark Faculty section: softer border and shadow */
     .people.dark .person-photo {
       border-color: rgba(255, 255, 255, 0.12);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
-    /* 校長那張稍微強調 */
+    /* Subtle emphasis for the highlighted (President) card */
     .person.highlight .person-photo {
       border: 2px solid #c9a24a;
       box-shadow: 0 10px 26px rgba(201, 162, 74, 0.25);
     }
-    /* 手機畫面下稍微縮小 */
+    /* Smaller photo on phones */
     @media (max-width: 640px) {
       .person-photo { width: 150px; }
     }
@@ -186,11 +186,11 @@
     </div>
   </section>
 
-  <!-- Faculty -->
+  <!-- Faculty (Representative) -->
   <section class="section section-dark" id="faculty">
     <div class="container">
       <div class="section-head light">
-        <p class="kicker gold">Faculty</p>
+        <p class="kicker gold">Faculty (Representative)</p>
         <h2>Hub-based research and teaching faculty.</h2>
         <p class="muted-light">A small core faculty works alongside research professors and external collaborators across each Hub.</p>
       </div>
@@ -204,10 +204,30 @@
           <p class="role">Hub Director · Professor of Health Sciences and Human Performance</p>
           <p class="muted-light small">Human performance · preventive health · lifestyle medicine · wellbeing science</p>
         </div>
-        <div class="person"><h4>Dr. Rafael Ibarra</h4><p class="role">Associate Professor of Public Health and Community Health</p><p class="muted-light small">Public health systems · community wellbeing · health equity · prevention programs</p></div>
-        <div class="person"><h4>Dr. Lian Chen</h4><p class="role">Associate Professor of Digital Health and Health Data</p><p class="muted-light small">Digital health tools · health data analytics · remote monitoring · AI-assisted health systems</p></div>
-        <div class="person"><h4>Dr. Miriam Osei</h4><p class="role">Research Professor of Mental Health and Wellbeing</p><p class="muted-light small">Mental health · stress resilience · behavioral health · trauma-informed wellbeing</p></div>
-        <div class="person"><h4>Dr. Caleb Winters</h4><p class="role">Assistant Professor of Human Performance Studies</p><p class="muted-light small">Physical performance · exercise science · recovery · occupational health</p></div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/rafael-ibarra.jpg" alt="Dr. Rafael Ibarra" /></div>
+          <h4>Dr. Rafael Ibarra</h4>
+          <p class="role">Associate Professor of Public Health and Community Health</p>
+          <p class="muted-light small">Public health systems · community wellbeing · health equity · prevention programs</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/lian-chen.jpg" alt="Dr. Lian Chen" /></div>
+          <h4>Dr. Lian Chen</h4>
+          <p class="role">Associate Professor of Digital Health and Health Data</p>
+          <p class="muted-light small">Digital health tools · health data analytics · remote monitoring · AI-assisted health systems</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/miriam-osei.jpg" alt="Dr. Miriam Osei" /></div>
+          <h4>Dr. Miriam Osei</h4>
+          <p class="role">Research Professor of Mental Health and Wellbeing</p>
+          <p class="muted-light small">Mental health · stress resilience · behavioral health · trauma-informed wellbeing</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/caleb-winters.jpg" alt="Dr. Caleb Winters" /></div>
+          <h4>Dr. Caleb Winters</h4>
+          <p class="role">Assistant Professor of Human Performance Studies</p>
+          <p class="muted-light small">Physical performance · exercise science · recovery · occupational health</p>
+        </div>
       </div>
 
       <!-- Hub II Faculty -->
@@ -219,10 +239,30 @@
           <p class="role">Hub Director · Professor of AI and Social Systems</p>
           <p class="muted-light small">Responsible AI · sociotechnical systems · digital governance · AI in public institutions</p>
         </div>
-        <div class="person"><h4>Dr. Aisha Rahman</h4><p class="role">Associate Professor of Data Science and Responsible AI</p><p class="muted-light small">Data science · AI accountability · algorithmic fairness · model evaluation</p></div>
-        <div class="person"><h4>Dr. Julian Park</h4><p class="role">Associate Professor of Human-AI Interaction</p><p class="muted-light small">Human-centered AI · interface design · decision support · AI in professional workflows</p></div>
-        <div class="person"><h4>Dr. Vera Sokolov</h4><p class="role">Research Professor of Computational Social Science</p><p class="muted-light small">Social data · computational modeling · public behavior · digital society</p></div>
-        <div class="person"><h4>Dr. Owen Fielding</h4><p class="role">Assistant Professor of Applied AI Systems</p><p class="muted-light small">Applied machine learning · AI prototypes · health AI · education technology</p></div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/aisha-rahman.jpg" alt="Dr. Aisha Rahman" /></div>
+          <h4>Dr. Aisha Rahman</h4>
+          <p class="role">Associate Professor of Data Science and Responsible AI</p>
+          <p class="muted-light small">Data science · AI accountability · algorithmic fairness · model evaluation</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/julian-park.jpg" alt="Dr. Julian Park" /></div>
+          <h4>Dr. Julian Park</h4>
+          <p class="role">Associate Professor of Human-AI Interaction</p>
+          <p class="muted-light small">Human-centered AI · interface design · decision support · AI in professional workflows</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/vera-sokolov.jpg" alt="Dr. Vera Sokolov" /></div>
+          <h4>Dr. Vera Sokolov</h4>
+          <p class="role">Research Professor of Computational Social Science</p>
+          <p class="muted-light small">Social data · computational modeling · public behavior · digital society</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/owen-fielding.jpg" alt="Dr. Owen Fielding" /></div>
+          <h4>Dr. Owen Fielding</h4>
+          <p class="role">Assistant Professor of Applied AI Systems</p>
+          <p class="muted-light small">Applied machine learning · AI prototypes · health AI · education technology</p>
+        </div>
       </div>
 
       <!-- Hub III Faculty -->
@@ -234,10 +274,30 @@
           <p class="role">Hub Director · Professor of Environmental Resilience and Human Futures</p>
           <p class="muted-light small">Climate resilience · environmental systems · sustainable communities · futures studies</p>
         </div>
-        <div class="person"><h4>Dr. Samuel R. Finch</h4><p class="role">Associate Professor of Climate Resilience</p><p class="muted-light small">Climate adaptation · environmental risk · resilience planning · regional climate systems</p></div>
-        <div class="person"><h4>Dr. Ingrid Hale</h4><p class="role">Research Professor of Urban Sustainability</p><p class="muted-light small">Sustainable cities · urban transformation · civic infrastructure · built environment</p></div>
-        <div class="person"><h4>Dr. Mateo Alvarez</h4><p class="role">Assistant Professor of Water, Land, and Community Systems</p><p class="muted-light small">Water systems · land use · community adaptation · environmental research in the American West</p></div>
-        <div class="person"><h4>Dr. Leona Price</h4><p class="role">Associate Professor of Human Futures and Scenario Planning</p><p class="muted-light small">Futures research · scenario planning · long-term social change · institutional resilience</p></div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/samuel-finch.jpg" alt="Dr. Samuel R. Finch" /></div>
+          <h4>Dr. Samuel R. Finch</h4>
+          <p class="role">Associate Professor of Climate Resilience</p>
+          <p class="muted-light small">Climate adaptation · environmental risk · resilience planning · regional climate systems</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/ingrid-hale.jpg" alt="Dr. Ingrid Hale" /></div>
+          <h4>Dr. Ingrid Hale</h4>
+          <p class="role">Research Professor of Urban Sustainability</p>
+          <p class="muted-light small">Sustainable cities · urban transformation · civic infrastructure · built environment</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/mateo-alvarez.jpg" alt="Dr. Mateo Alvarez" /></div>
+          <h4>Dr. Mateo Alvarez</h4>
+          <p class="role">Assistant Professor of Water, Land, and Community Systems</p>
+          <p class="muted-light small">Water systems · land use · community adaptation · environmental research in the American West</p>
+        </div>
+        <div class="person has-photo">
+          <div class="person-photo"><img src="images/leona-price.jpg" alt="Dr. Leona Price" /></div>
+          <h4>Dr. Leona Price</h4>
+          <p class="role">Associate Professor of Human Futures and Scenario Planning</p>
+          <p class="muted-light small">Futures research · scenario planning · long-term social change · institutional resilience</p>
+        </div>
       </div>
     </div>
   </section>
